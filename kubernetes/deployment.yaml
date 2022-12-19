@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: api
-        image: "containerregistrydevchejuro.azurecr.io/api:1005"
+        image: "containerregistrydevchejuro.azurecr.io/api:1011"
         ports:
         - containerPort: 5000
