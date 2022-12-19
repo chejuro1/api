@@ -17,6 +17,7 @@ WORKDIR /home/flask-api
 COPY environment.yml ./
 
 # ADD - "adds" directories and their contents to the container
+RUN mkdir app
 ADD app ./app
 
 # chmod - modifies the boot.sh file so it can be recognized as an executable file.
