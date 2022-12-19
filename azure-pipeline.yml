@@ -6,7 +6,8 @@ trigger:
 - master
 
 resources:
-- repo: self
+  repositories:
+  - repository: api
 
 variables:
   # Container registry service connection established during pipeline creation
