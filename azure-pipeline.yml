@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: acr
+  dockerRegistryServiceConnection: acrconnect
   imageRepository: 'api'
   containerRegistry: 'containerregistrydevchejuro.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
