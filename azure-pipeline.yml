@@ -50,6 +50,6 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
+        ArtifactName: 'api'
         publishLocation: 'Container'
         StoreAsTar: false
