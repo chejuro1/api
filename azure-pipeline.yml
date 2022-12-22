@@ -15,12 +15,7 @@ variables:
   imageRepository: 'api'
   containerRegistry: 'containerregistrydevchejuro.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  #internalBuildNumber: 1
-  #semanticBuildNumber: $[counter(variables['internalBuildNumber'], 0)]
   tag: '$(Build.BuildId)'
-  # tags: |
-  #     #test_1.$(semanticBuildNumber)
-  #     latest
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
