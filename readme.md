@@ -43,6 +43,7 @@
 
 <! --Github -->
 <! -- Code Blocks -->
+
 ```bash
 npm install 
 ```
@@ -83,6 +84,7 @@ function add()
 ~~This text ~~
 <! Blockquote -->
 > this a quote
+>> this a second  quote
 <! --Links -->
 [Traversy Media](acr/acr.tf)
 <! --Utrl >
@@ -116,3 +118,45 @@ function add()
 * [X] Task 1
 * [X] Task 2
 * [X] Task 3
+
+# Table of Contents
+- [Heading](#heading)
+  - [Sub Heading](#sub-heading)
+- [Heading](#heading-1)
+  - [Sub Heading](#sub-heading-1)
+- [Table of Contents](#table-of-contents)
+  - [Example](#example)
+  - [Example2](#example2)
+  - [Third Example](#third-example)
+  - [Fourth Example](#fourth-example)
+
+
+## Example
+## Example2
+## Third Example
+## [Fourth Example](http://www.fourthexample.com) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
