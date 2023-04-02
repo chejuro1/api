@@ -1,0 +1,5 @@
+
+curl -X POST \
+  http://localhost:5000/customers \
+  -H 'Content-Type: application/json' \
+  -d '{"id": 2, "name": "john", "email":"john@yahoo.fr"}'
