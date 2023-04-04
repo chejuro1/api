@@ -1,21 +1,51 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: api
+#   labels:
+#     app: api
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: api
+#   template:
+#     metadata:
+#       labels:
+#         app: api
+#     spec:
+#       containers:
+#       - name: api
+#         image: "containerregistrydevchejuro.azurecr.io/api:1011"
+#         ports:
+#         - containerPort: 5000
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api
-  labels:
-    app: api
+  name: customer-service
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: api
+      app: customer-service
   template:
     metadata:
       labels:
-        app: api
+        app: customer-service
     spec:
       containers:
-      - name: api
-        image: "containerregistrydevchejuro.azurecr.io/api:1011"
-        ports:
-        - containerPort: 5000
+        - name: customer-service
+          image: <registry-url>/my-customer-service:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-config
+                  key: host
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-config
+                  key: port
