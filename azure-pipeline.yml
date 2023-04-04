@@ -8,14 +8,16 @@ trigger:
 resources:
 - repo: self
 
-
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: acrconnect
-  imageRepository: 'api'
-  containerRegistry: 'containerregistrydevchejuro.azurecr.io'
+  azureserviceconnection: ''
+  imageRepository: 'chejuro'
+  containerRegistry: '957355528286.dkr.ecr.us-east-1.amazonaws.com'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  AWS_REGION: 'us-east-1'
+  
   tag: '$(Build.BuildId)'
+
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -29,15 +31,41 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    ## This task  is for azure 
+    # - task: Docker@2
+    #   displayName: Build and push an image to container registry
+    #   inputs:
+    #     command: buildAndPush
+    #     repository: $(imageRepository)
+    #     dockerfile: $(dockerfilePath)
+    #     containerRegistry: $(dockerRegistryServiceConnection)
+    #     tags: |
+    #       $(tag)
+    ########AWS      ###############################################
     - task: Docker@2
-      displayName: Build and push an image to container registry
+      displayName: Build an image
       inputs:
-        command: buildAndPush
         repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
+        command: 'build'
+        Dockerfile: $(dockerfilePath)
         tags: |
-          $(tag)
+           $(tag)
+    ####  AWS ECR Task to push image###
+
+    - task: ECRPushImage@1
+      displayName: Push   image
+      inputs:
+        awsCredentials: 'aws_ecr'
+        regionName: $(AWS_REGION)
+        sourceImageTag: $(Build.BuildId)
+        imageSource: 'imagename'
+        sourceImageName: $(imageRepository)
+        pushTag: latest
+        repositoryName: $(imageRepository)
+        # autoCreateRepository: true
+        outputVariable: '957355528286.dkr.ecr.us-east-1.amazonaws.com/$(imageRepository)'
+   #################################################################################
+   
     - task: CopyFiles@2
       inputs:
         sourceFolder: '$(Build.SourcesDirectory)/kubernetes/'
@@ -46,6 +74,6 @@ stages:
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'api'
+        ArtifactName: 'drop'
         publishLocation: 'Container'
         StoreAsTar: false
