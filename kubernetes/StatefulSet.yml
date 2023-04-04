@@ -36,10 +36,10 @@ spec:
             - mongod
             - --config=/etc/mongo/mongod.conf
             - --bind_ip_all
-          securityContext:
-            runAsUser: 1000
-            runAsGroup: 1000
-            fsGroup: 1000
+          # securityContext:
+          #   runAsUser: 1000
+          #   runAsGroup: 1000
+          #   fsGroup: 1000
       volumes:
         - name: mongo-persistent-storage
           persistentVolumeClaim:
