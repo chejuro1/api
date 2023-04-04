@@ -44,7 +44,7 @@ spec:
                 configMapKeyRef:
                   name: mongo-config
                   key: host
-            - name: MONGO_PORT
+            # - name: MONGO_PORT
               # valueFrom:
               #   configMapKeyRef:
               #     name: mongo-config
