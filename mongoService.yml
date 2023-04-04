@@ -9,3 +9,10 @@ spec:
     - protocol: TCP
       port: 27017
       targetPort: 27017
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: customer-service-config
+data:
+  MONGODB_CONNECTION_STRING: "mongodb://mongo:27017/customer-db"
