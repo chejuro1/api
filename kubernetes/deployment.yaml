@@ -43,7 +43,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: mongo-config
-                  key: host
+                  key: database_url
             # - name: MONGO_PORT
               # valueFrom:
               #   configMapKeyRef:
