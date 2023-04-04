@@ -35,11 +35,11 @@ spec:
     spec:
       containers:
         - name: customer-service
-          image: <registry-url>/my-customer-service:latest
+          image: 957355528286.dkr.ecr.us-east-1.amazonaws.com/chejuro:latest
           ports:
             - containerPort: 5000
           env:
-            - name: MONGO_HOST
+            - name: MONGODB_URI
               valueFrom:
                 configMapKeyRef:
                   name: mongo-config
@@ -49,3 +49,5 @@ spec:
                 configMapKeyRef:
                   name: mongo-config
                   key: port
+             
+      

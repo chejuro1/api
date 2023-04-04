@@ -1,17 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: api
+  name: customer-service
   annotations:
-    kubernetes.io/ingress.class: azure/application-gateway
+    # kubernetes.io/ingress.class: azure/application-gateway
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: 'ip'
+    alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
   rules:
   - http:
       paths:
-      - path: /api
+      - path: /customers
         backend:
           service:
-            name: api-svc
+            name: customer-service
             port:
               number: 5000
         pathType: Exact
