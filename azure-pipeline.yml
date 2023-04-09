@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   azureserviceconnection: ''
-  imageRepository: 'chejuro'
+  imageRepository: 'acr'
   containerRegistry: '957355528286.dkr.ecr.us-east-1.amazonaws.com'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   AWS_REGION: 'us-east-1'
