@@ -18,3 +18,10 @@ spec:
             port:
               number: 5000
         pathType: Exact
+      - path: /
+        backend:
+          service:
+            name: customer-service
+            port:
+              number: 5000
+        pathType: Exact
