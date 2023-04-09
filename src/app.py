@@ -4,8 +4,8 @@ import os
 
 app = Flask(__name__)
 
-client = MongoClient(os.environ['database_url'])
-db = client[os.environ['MONGODB_DATABASE']]
+client = MongoClient(os.environ['MONGODB_URI'])
+db = client[os.environ['MONGODB']]
 customers = db.customers
 
 @app.route('/')

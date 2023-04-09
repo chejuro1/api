@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
         - name: customer-service
-          image: 957355528286.dkr.ecr.us-east-1.amazonaws.com/chejuro:latest
+          image: 957355528286.dkr.ecr.us-east-1.amazonaws.com/acr:latest
           ports:
             - containerPort: 5000
           env:
@@ -43,11 +43,11 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: mongo-config
-                  key: database_url
-            # - name: MONGO_PORT
-              # valueFrom:
-              #   configMapKeyRef:
-              #     name: mongo-config
-              #     key: port
+                  key: MONGODBURI
+            - name: MONGODB
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-config
+                  key: MONGODBDATABASE
              
       
