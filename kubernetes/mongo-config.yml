@@ -4,5 +4,5 @@ kind: ConfigMap
 metadata:
   name: mongo-config
 data:
-  MONGODBURI: mongodb://mongo-service.default.svc.cluster.local:27017
+  MONGODBURI: mongodb://10.0.1.152:27017
   MONGODBDATABASE: MONGODB_DATABASE
