@@ -1,6 +1,6 @@
 datadog:
-  apiKey: <DATADOG_API_KEY>
-  appKey: <DATADOG_APP_KEY>
+  apiKey: "e7d01beb43fe0710d463070508380f51"
+  #appKey: <DATADOG_APP_KEY>
   criSocketPath: /run/dockershim.sock
   env:
   - name: DD_AUTOCONFIG_INCLUDE_FEATURES
