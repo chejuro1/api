@@ -5,7 +5,7 @@ datadog:
   env:
   - name: DD_AUTOCONFIG_INCLUDE_FEATURES
     value: "containerd"
-  clusterName: education-eks-LcJlTOXM
+  clusterName: "my-cluster-1.prod.us-east-1"
   tags: []
   # datadog.kubelet.tlsVerify should be `false` on kind and minikube
   # to establish communication with the kubelet
