@@ -71,6 +71,11 @@ stages:
         sourceFolder: '$(Build.SourcesDirectory)/kubernetes/'
         Contents: '**'
         TargetFolder: '$(build.artifactstagingdirectory)'
+    - task: CopyFiles@2
+      inputs:
+        sourceFolder: '$(Build.SourcesDirectory)/datadog/'
+        Contents: '**'
+        TargetFolder: '$(build.artifactstagingdirectory)'
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
