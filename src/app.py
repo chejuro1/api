@@ -3,17 +3,17 @@ from pymongo import MongoClient
 import os
 
 #########
+
 import logging
-from opencensus.ext.azure.log_exporter import AzureLogHandler
+from opencensus.ext.azure.log_exporter import AzureEventHandler
 
 logger = logging.getLogger(__name__)
-#logger.addHandler(AzureLogHandler())
+logger.addHandler(AzureEventHandler())
 # Alternatively manually pass in the connection_string
-logger.addHandler(AzureLogHandler(connection_string="InstrumentationKey=eb85f8ac-b893-4766-8c85-4c99149f17d3"))
-properties = {'custom_dimensions': {'key_1': 'value_1', 'key_2': 'value_2'}}
+logger.addHandler(AzureEventHandler(connection_string="InstrumentationKey=eb85f8ac-b893-4766-8c85-4c99149f17d3"))
 
-# Use properties in logging statements
-logger.warning('action', extra=properties)
+logger.setLevel(logging.INFO)
+logger.info('Hello, World!')
 
 ########
 
