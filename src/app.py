@@ -9,13 +9,13 @@ from opencensus.ext.azure.log_exporter import AzureLogHandler
 logger = logging.getLogger(__name__)
 #logger.addHandler(AzureLogHandler())
 # Alternatively manually pass in the connection_string
-logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=eb85f8ac-b893-4766-8c85-4c99149f17d3'))
+logger.addHandler(AzureLogHandler(connection_string='InstrumentationKey=eb85f8ac-b893-4766-8c85-4c99149f17d3;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/'))
 properties = {'custom_dimensions': {'key_1': 'value_1', 'key_2': 'value_2'}}
 
 # Use properties in logging statements
 logger.warning('action', extra=properties)
 
-########
+########k
 
 app = Flask(__name__)
 
