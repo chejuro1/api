@@ -15,7 +15,7 @@ properties = {'custom_dimensions': {'key_1': 'value_1', 'key_2': 'value_2'}}
 # Use properties in logging statements
 logger.warning('action', extra=properties)
 
-########k
+########
 
 app = Flask(__name__)
 
