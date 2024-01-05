@@ -1,17 +1,18 @@
 from flask import Flask, jsonify, request
 from pymongo import MongoClient
+from werkzeug.utils import url_quote
 import os
 
 #########
 
-import logging
-from opencensus.ext.azure.log_exporter import AzureEventHandler
+# import logging
+# from opencensus.ext.azure.log_exporter import AzureEventHandler
 
-logger = logging.getLogger(__name__)
-# Alternatively manually pass in the connection_string
-logger.addHandler(AzureEventHandler(connection_string="InstrumentationKey=eb85f8ac-b893-4766-8c85-4c99149f17d3"))
-logger.setLevel(logging.INFO)
-logger.info('Hello, World!')
+# logger = logging.getLogger(__name__)
+# # Alternatively manually pass in the connection_string
+# logger.addHandler(AzureEventHandler(connection_string="InstrumentationKey=eb85f8ac-b893-4766-8c85-4c99149f17d3"))
+# logger.setLevel(logging.INFO)
+# logger.info('Hello, World!')
 
 ########
 
