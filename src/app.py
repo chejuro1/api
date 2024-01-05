@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
 from pymongo import MongoClient
-from werkzeug.utils import url_quote
 import os
 
 #########
