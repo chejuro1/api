@@ -1,5 +1,5 @@
 
 curl -X POST \
-  http://localhost:5000/customers \
+  http://k8s-default-customer-dffcb798d1-1634271102.us-east-1.elb.amazonaws.com/customers \
   -H 'Content-Type: application/json' \
   -d '{"id": 2, "name": "john", "email":"john@yahoo.fr"}'
