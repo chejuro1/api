@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: mongo-config
 data:
-  MONGODBURI: mongodb://10.0.1.163:27017
+  MONGODBURI: mongodb://10.0.2.66:27017
   MONGODBDATABASE: MONGODB_DATABASE
 
 ##
