@@ -12,7 +12,7 @@ variables:
   # Container registry service connection established during pipeline creation
   azureserviceconnection: ''
   imageRepository: 'acr'
-  containerRegistry: '957355528286.dkr.ecr.us-east-1.amazonaws.com'
+  containerRegistry: '211125318888.dkr.ecr.us-east-1.amazonaws.com'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   AWS_REGION: 'us-east-1'
   
@@ -63,7 +63,7 @@ stages:
         pushTag: latest
         repositoryName: $(imageRepository)
         # autoCreateRepository: true
-        outputVariable: '957355528286.dkr.ecr.us-east-1.amazonaws.com/$(imageRepository)'
+        outputVariable: '211125318888.dkr.ecr.us-east-1.amazonaws.com/$(imageRepository)'
    #################################################################################
    
     - task: CopyFiles@2
