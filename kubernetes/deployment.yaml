@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
         - name: customer-service
-          image: 957355528286.dkr.ecr.us-east-1.amazonaws.com/acr:latest
+          image: 211125318888.dkr.ecr.us-east-1.amazonaws.com/acr:latest
           ports:
             - containerPort: 5000
           env:
